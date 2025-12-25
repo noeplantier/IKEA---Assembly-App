@@ -85,3 +85,13 @@ class CustomButton extends StatelessWidget {
     );
   }
 }
+
+class AppTheme {
+  static var mediumRadius;
+
+  static var primaryColor;
+
+  static var primaryGradient;
+
+  static var primaryShadow;
+}

@@ -1,6 +1,4 @@
-// seed_database.js
-// Run this script to populate your Firebase Firestore with sample data
-// Usage: node seed_database.js
+
 
 const admin = require('firebase-admin');
 const serviceAccount = require('./serviceAccountKey.json');

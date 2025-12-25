@@ -184,7 +184,15 @@ class FurnitureProvider with ChangeNotifier {
   // Get all categories
   List<String> getCategories() {
     Set<String> categories =
-        _allFurniture.map((furniture) => furniture.category).toSet();
+        _allFurniture.map((furniture) => furniture.category as String).toSet();
     return ['All', ...categories.toList()..sort()];
   }
+}
+
+class Furniture {
+  get category => null;
+
+  get name => null;
+
+  get description => null;
 }
