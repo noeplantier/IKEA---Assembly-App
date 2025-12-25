@@ -1,0 +1,55 @@
+type User @table {
+  uid: String!
+  displayName: String!
+  createdAt: Timestamp!
+  email: String
+  photoUrl: String
+  lastLoginAt: Timestamp
+}
+
+type Category @table {
+  name: String!
+  createdAt: Timestamp!
+  description: String
+  iconUrl: String
+}
+
+type Furniture @table {
+  category: Category
+  name: String!
+  modelNumber: String!
+  imageUrl: String!
+  price: Float!
+  createdAt: Timestamp!
+  description: String
+  dimensions: String
+  assemblyTimeEstimate: Int
+  productPageUrl: String
+}
+
+type Material @table {
+  name: String!
+  type: String!
+  count: Int!
+  model3dUrl: String!
+  createdAt: Timestamp!
+  description: String
+  imageUrl: String
+}
+
+type FurnitureMaterial @table(key: ["furniture", "material"]) {
+  furniture: Furniture!
+  material: Material!
+  quantity: Int!
+}
+
+type AssemblyStep @table {
+  furniture: Furniture
+  stepNumber: Int!
+  description: String!
+  model3dUrl: String!
+  createdAt: Timestamp!
+  instructionImageUrl: String
+  animationUrl: String
+  tipsAndTricks: String
+}
