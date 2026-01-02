@@ -22,10 +22,10 @@ dependencies:
   cloud_firestore: ^5.6.12
   provider: ^6.1.5+1
   google_sign_in: ^7.2.0
+  model_viewer_plus: ^1.9.3
 
 dev_dependencies:
-  flutter_test:
-    sdk: flutter
+
   flutter_lints: ^2.0.0
 
 flutter:
@@ -35,3 +35,15 @@ flutter:
     - assets/images/
     - assets/animations/
     - assets/icons/
+    - assets/models/
+    - assets/models/corner_sofa.glb
+    - assets/models/ikea_bissa_shoe_storage_rigged.glb
+    - assets/models/ikea_fjallbo_tv_unit.glb
+    - assets/models/ikea_raskog_pink_utility_trolley.glb
+    - assets/models/ikea_hemnes_dresser.glb
+    - assets/models/sofa_-_ikea_nockeby.glb
+    - assets/models/malm_bed.glb
+    - assets/models/pahl_desk.glb
+    - assets/models/poang_armchair.glb
+    - assets/models/pax_wardrobe.glb
+    - assets/models/lack_table.glb
