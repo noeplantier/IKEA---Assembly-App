@@ -21,8 +21,10 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         children: [
           Image.asset('assets/logo.png', height: 32),
           const SizedBox(width: 8),
-          const Text('IKEA Assembly',
-              style: TextStyle(fontSize: 20, color: Colors.white)),
+          const Text(
+            'IKEA Assembly',
+            style: TextStyle(fontSize: 20, color: Colors.white),
+          ),
         ],
       ),
       actions: [
@@ -120,12 +122,14 @@ class AssemblyStep {
   final String title;
   final String description;
   final String icon;
+  final String? imageUrl;
 
   AssemblyStep({
     required this.stepNumber,
     required this.title,
     required this.description,
     required this.icon,
+    this.imageUrl,
   });
 }
 
@@ -143,7 +147,7 @@ class FurnitureCategory {
   });
 }
 
-// DEMO DATA AVEC CHEMINS CORRECTS
+// DEMO DATA AVEC CHEMINS CORRECTS VERS LES MODELES .glb
 class DemoData {
   static List<FurnitureCategory> categories = [
     FurnitureCategory(
@@ -204,35 +208,63 @@ class DemoData {
       estimatedTime: 45,
       materials: [
         FurnitureMaterial(
-            name: 'Wooden Panels', quantity: 8, type: 'Main', icon: '🪵'),
+          name: 'Wooden Panels',
+          quantity: 8,
+          type: 'Main',
+          icon: '🪵',
+        ),
         FurnitureMaterial(
-            name: 'Screws (M6)', quantity: 24, type: 'Fastener', icon: '🔩'),
+          name: 'Screws (M6)',
+          quantity: 24,
+          type: 'Fastener',
+          icon: '🔩',
+        ),
         FurnitureMaterial(
-            name: 'Allen Key', quantity: 1, type: 'Tool', icon: '🔧'),
+          name: 'Allen Key',
+          quantity: 1,
+          type: 'Tool',
+          icon: '🔧',
+        ),
         FurnitureMaterial(
-            name: 'Dowels', quantity: 16, type: 'Fastener', icon: '📌'),
+          name: 'Dowels',
+          quantity: 16,
+          type: 'Fastener',
+          icon: '📌',
+        ),
       ],
       steps: [
         AssemblyStep(
-            stepNumber: 1,
-            title: 'Prepare workspace',
-            description: 'Clear a large area and lay out all parts',
-            icon: '📦'),
+          stepNumber: 1,
+          title: 'Prepare workspace',
+          description: 'Clear a large area and lay out all parts',
+          icon: '📦',
+          imageUrl:
+              'https://www.ikea.com/ca/en/assembly_instructions/malm-bed-frame__AA-123456-1_pub.pdf',
+        ),
         AssemblyStep(
-            stepNumber: 2,
-            title: 'Assemble side panels',
-            description: 'Connect side panels using dowels and screws',
-            icon: '🔨'),
+          stepNumber: 2,
+          title: 'Assemble side panels',
+          description: 'Connect side panels using dowels and screws',
+          icon: '🔨',
+          imageUrl:
+              'https://www.ikea.com/ca/en/assembly_instructions/malm-bed-frame__AA-123456-2_pub.pdf',
+        ),
         AssemblyStep(
-            stepNumber: 3,
-            title: 'Attach headboard',
-            description: 'Secure headboard to side panels',
-            icon: '🪛'),
+          stepNumber: 3,
+          title: 'Attach headboard',
+          description: 'Secure headboard to side panels',
+          icon: '🪛',
+          imageUrl:
+              'https://www.ikea.com/ca/en/assembly_instructions/malm-bed-frame__AA-123456-3_pub.pdf',
+        ),
         AssemblyStep(
-            stepNumber: 4,
-            title: 'Install bed base',
-            description: 'Place and secure the slatted bed base',
-            icon: '✅'),
+          stepNumber: 4,
+          title: 'Install bed base',
+          description: 'Place and secure the slatted bed base',
+          icon: '✅',
+          imageUrl:
+              'https://www.ikea.com/ca/en/assembly_instructions/malm-bed-frame__AA-123456-4_pub.pdf',
+        ),
       ],
     ),
 
@@ -249,35 +281,63 @@ class DemoData {
       estimatedTime: 30,
       materials: [
         FurnitureMaterial(
-            name: 'Side Panels', quantity: 2, type: 'Main', icon: '📏'),
+          name: 'Side Panels',
+          quantity: 2,
+          type: 'Main',
+          icon: '📏',
+        ),
         FurnitureMaterial(
-            name: 'Shelves', quantity: 5, type: 'Main', icon: '📚'),
+          name: 'Shelves',
+          quantity: 5,
+          type: 'Main',
+          icon: '📚',
+        ),
         FurnitureMaterial(
-            name: 'Back Panel', quantity: 1, type: 'Main', icon: '🪵'),
+          name: 'Back Panel',
+          quantity: 1,
+          type: 'Main',
+          icon: '🪵',
+        ),
         FurnitureMaterial(
-            name: 'Nails', quantity: 30, type: 'Fastener', icon: '📌'),
+          name: 'Nails',
+          quantity: 30,
+          type: 'Fastener',
+          icon: '📌',
+        ),
       ],
       steps: [
         AssemblyStep(
-            stepNumber: 1,
-            title: 'Lay side panels',
-            description: 'Position side panels on the floor',
-            icon: '📐'),
+          stepNumber: 1,
+          title: 'Lay side panels',
+          description: 'Position side panels on the floor',
+          icon: '📐',
+          imageUrl:
+              'https://www.ikea.com/ca/en/assembly_instructions/billy-bookcase__AA-123456-1_pub.pdf',
+        ),
         AssemblyStep(
-            stepNumber: 2,
-            title: 'Insert shelf pins',
-            description: 'Place shelf pins at desired heights',
-            icon: '🔘'),
+          stepNumber: 2,
+          title: 'Insert shelf pins',
+          description: 'Place shelf pins at desired heights',
+          icon: '🔘',
+          imageUrl:
+              'https://www.ikea.com/ca/en/assembly_instructions/billy-bookcase__AA-123456-2_pub.pdf',
+        ),
         AssemblyStep(
-            stepNumber: 3,
-            title: 'Add shelves',
-            description: 'Rest shelves on the pins',
-            icon: '📚'),
+          stepNumber: 3,
+          title: 'Add shelves',
+          description: 'Rest shelves on the pins',
+          icon: '📚',
+          imageUrl:
+              'https://www.ikea.com/ca/en/assembly_instructions/billy-bookcase__AA-123456-3_pub.pdf',
+        ),
         AssemblyStep(
-            stepNumber: 4,
-            title: 'Attach back panel',
-            description: 'Nail the back panel to secure structure',
-            icon: '🔨'),
+          stepNumber: 4,
+          title: 'Attach back panel',
+          description: 'Nail the back panel to secure structure',
+          icon: '🔨',
+          imageUrl:
+              'https://www.ikea.com/ca/en/assembly_instructions/billy-bookcase__AA-123456-4_pub.pdf',
+        ),
       ],
     ),
 
@@ -294,27 +354,49 @@ class DemoData {
       estimatedTime: 25,
       materials: [
         FurnitureMaterial(
-            name: 'Desktop', quantity: 1, type: 'Main', icon: '🪵'),
-        FurnitureMaterial(name: 'Legs', quantity: 4, type: 'Main', icon: '🦵'),
+          name: 'Desktop',
+          quantity: 1,
+          type: 'Main',
+          icon: '🪵',
+        ),
         FurnitureMaterial(
-            name: 'Screws', quantity: 16, type: 'Fastener', icon: '🔩'),
+          name: 'Legs',
+          quantity: 4,
+          type: 'Main',
+          icon: '🦵',
+        ),
+        FurnitureMaterial(
+          name: 'Screws',
+          quantity: 16,
+          type: 'Fastener',
+          icon: '🔩',
+        ),
       ],
       steps: [
         AssemblyStep(
-            stepNumber: 1,
-            title: 'Attach legs',
-            description: 'Screw legs to desktop underside',
-            icon: '🔧'),
+          stepNumber: 1,
+          title: 'Attach legs',
+          description: 'Screw legs to desktop underside',
+          icon: '🔧',
+          imageUrl:
+              'https://www.ikea.com/ca/en/assembly_instructions/pahl-desk__AA-123456-1_pub.pdf',
+        ),
         AssemblyStep(
-            stepNumber: 2,
-            title: 'Install adjusters',
-            description: 'Add height adjustment mechanism',
-            icon: '⚙️'),
+          stepNumber: 2,
+          title: 'Install adjusters',
+          description: 'Add height adjustment mechanism',
+          icon: '⚙️',
+          imageUrl:
+              'https://www.ikea.com/ca/en/assembly_instructions/pahl-desk__AA-123456-2_pub.pdf',
+        ),
         AssemblyStep(
-            stepNumber: 3,
-            title: 'Flip desk',
-            description: 'Turn desk right-side up carefully',
-            icon: '🔄'),
+          stepNumber: 3,
+          title: 'Flip desk',
+          description: 'Turn desk right-side up carefully',
+          icon: '🔄',
+          imageUrl:
+              'https://www.ikea.com/ca/en/assembly_instructions/pahl-desk__AA-123456-3_pub.pdf',
+        ),
       ],
     ),
 
@@ -331,28 +413,49 @@ class DemoData {
       estimatedTime: 15,
       materials: [
         FurnitureMaterial(
-            name: 'Bentwood Frame', quantity: 1, type: 'Main', icon: '🪑'),
+          name: 'Bentwood Frame',
+          quantity: 1,
+          type: 'Main',
+          icon: '🪑',
+        ),
         FurnitureMaterial(
-            name: 'Cushion', quantity: 1, type: 'Main', icon: '🛋️'),
+          name: 'Cushion',
+          quantity: 1,
+          type: 'Main',
+          icon: '🛋️',
+        ),
         FurnitureMaterial(
-            name: 'Screws', quantity: 8, type: 'Fastener', icon: '🔩'),
+          name: 'Screws',
+          quantity: 8,
+          type: 'Fastener',
+          icon: '🔩',
+        ),
       ],
       steps: [
         AssemblyStep(
-            stepNumber: 1,
-            title: 'Unpack frame',
-            description: 'Remove frame from packaging',
-            icon: '📦'),
+          stepNumber: 1,
+          title: 'Unpack frame',
+          description: 'Remove frame from packaging',
+          icon: '📦',
+          imageUrl:
+              'https://www.ikea.com/ca/en/assembly_instructions/poang-armchair__AA-123456-1_pub.pdf',
+        ),
         AssemblyStep(
-            stepNumber: 2,
-            title: 'Connect frame parts',
-            description: 'Bolt frame sections together',
-            icon: '🔧'),
+          stepNumber: 2,
+          title: 'Connect frame parts',
+          description: 'Bolt frame sections together',
+          icon: '🔧',
+          imageUrl:
+              'https://www.ikea.com/ca/en/assembly_instructions/poang-armchair__AA-123456-2_pub.pdf',
+        ),
         AssemblyStep(
-            stepNumber: 3,
-            title: 'Attach seat base',
-            description: 'Screw seat base to frame',
-            icon: '🪛'),
+          stepNumber: 3,
+          title: 'Attach seat base',
+          description: 'Screw seat base to frame',
+          icon: '🪛',
+          imageUrl:
+              'https://www.ikea.com/ca/en/assembly_instructions/poang-armchair__AA-123456-3_pub.pdf',
+        ),
       ],
     ),
 
@@ -369,34 +472,63 @@ class DemoData {
       estimatedTime: 120,
       materials: [
         FurnitureMaterial(
-            name: 'Side Panels', quantity: 2, type: 'Main', icon: '🪵'),
-        FurnitureMaterial(name: 'Doors', quantity: 2, type: 'Main', icon: '🚪'),
+          name: 'Side Panels',
+          quantity: 2,
+          type: 'Main',
+          icon: '🪵',
+        ),
         FurnitureMaterial(
-            name: 'Hinges', quantity: 8, type: 'Hardware', icon: '⚙️'),
+          name: 'Doors',
+          quantity: 2,
+          type: 'Main',
+          icon: '🚪',
+        ),
         FurnitureMaterial(
-            name: 'Screws', quantity: 50, type: 'Fastener', icon: '🔩'),
+          name: 'Hinges',
+          quantity: 8,
+          type: 'Hardware',
+          icon: '⚙️',
+        ),
+        FurnitureMaterial(
+          name: 'Screws',
+          quantity: 50,
+          type: 'Fastener',
+          icon: '🔩',
+        ),
       ],
       steps: [
         AssemblyStep(
-            stepNumber: 1,
-            title: 'Assemble frame',
-            description: 'Connect side, top and bottom panels',
-            icon: '🏗️'),
+          stepNumber: 1,
+          title: 'Assemble frame',
+          description: 'Connect side, top and bottom panels',
+          icon: '🏗️',
+          imageUrl:
+              'https://www.ikea.com/ca/en/assembly_instructions/pax-wardrobe__AA-123456-1_pub.pdf',
+        ),
         AssemblyStep(
-            stepNumber: 2,
-            title: 'Install back panels',
-            description: 'Attach back panels with nails',
-            icon: '🔨'),
+          stepNumber: 2,
+          title: 'Install back panels',
+          description: 'Attach back panels with nails',
+          icon: '🔨',
+          imageUrl:
+              'https://www.ikea.com/ca/en/assembly_instructions/pax-wardrobe__AA-123456-2_pub.pdf',
+        ),
         AssemblyStep(
-            stepNumber: 3,
-            title: 'Add shelves',
-            description: 'Install adjustable shelves',
-            icon: '📚'),
+          stepNumber: 3,
+          title: 'Add shelves',
+          description: 'Install adjustable shelves',
+          icon: '📚',
+          imageUrl:
+              'https://www.ikea.com/ca/en/assembly_instructions/pax-wardrobe__AA-123456-3_pub.pdf',
+        ),
         AssemblyStep(
-            stepNumber: 4,
-            title: 'Mount doors',
-            description: 'Attach doors with hinges',
-            icon: '🚪'),
+          stepNumber: 4,
+          title: 'Mount doors',
+          description: 'Attach doors with hinges',
+          icon: '🚪',
+          imageUrl:
+              'https://www.ikea.com/ca/en/assembly_instructions/pax-wardrobe__AA-123456-4_pub.pdf',
+        ),
       ],
     ),
 
@@ -413,177 +545,375 @@ class DemoData {
       estimatedTime: 20,
       materials: [
         FurnitureMaterial(
-            name: 'Tabletop', quantity: 1, type: 'Main', icon: '🪵'),
-        FurnitureMaterial(name: 'Legs', quantity: 4, type: 'Main', icon: '🦵'),
+          name: 'Tabletop',
+          quantity: 1,
+          type: 'Main',
+          icon: '🪵',
+        ),
         FurnitureMaterial(
-            name: 'Screws', quantity: 12, type: 'Fastener', icon: '🔩'),
+          name: 'Legs',
+          quantity: 4,
+          type: 'Main',
+          icon: '🦵',
+        ),
+        FurnitureMaterial(
+          name: 'Screws',
+          quantity: 12,
+          type: 'Fastener',
+          icon: '🔩',
+        ),
       ],
       steps: [
         AssemblyStep(
-            stepNumber: 1,
-            title: 'Flip tabletop',
-            description: 'Turn tabletop upside down',
-            icon: '🔄'),
+          stepNumber: 1,
+          title: 'Flip tabletop',
+          description: 'Turn tabletop upside down',
+          icon: '🔄',
+          imageUrl:
+              'https://www.ikea.com/ca/en/assembly_instructions/lack-table__AA-123456-1_pub.pdf',
+        ),
         AssemblyStep(
-            stepNumber: 2,
-            title: 'Attach legs',
-            description: 'Screw legs into corner brackets',
-            icon: '🔧'),
+          stepNumber: 2,
+          title: 'Attach legs',
+          description: 'Screw legs into corner brackets',
+          icon: '🔧',
+          imageUrl:
+              'https://www.ikea.com/ca/en/assembly_instructions/lack-table__AA-123456-2_pub.pdf',
+        ),
         AssemblyStep(
-            stepNumber: 3,
-            title: 'Tighten screws',
-            description: 'Ensure all screws are secure',
-            icon: '🪛'),
+          stepNumber: 3,
+          title: 'Tighten screws',
+          description: 'Ensure all screws are secure',
+          icon: '🪛',
+          imageUrl:
+              'https://www.ikea.com/ca/en/assembly_instructions/lack-table__AA-123456-3_pub.pdf',
+        ),
       ],
     ),
 
+    // HEMNES DRESSER
     Furniture(
       id: '7',
-      name: 'EKET Cabinet',
-      category: 'shelves',
-      description: 'Modular cabinet with doors and shelves',
-      imageUrl:
-          'https://www.ikea.com/ca/en/images/products/eket-storage-combination-with-legs-white-wood__0915074_pe784547_s5.jpg',
-      model3DPath: 'assets/models/eket_cabinet.glb',
-      difficultyLevel: 2,
-      estimatedTime: 35,
-      materials: [
-        FurnitureMaterial(
-            name: 'Cabinet Panels', quantity: 4, type: 'Main', icon: '🪵'),
-        FurnitureMaterial(name: 'Doors', quantity: 2, type: 'Main', icon: '🚪'),
-        FurnitureMaterial(
-            name: 'Hinges', quantity: 4, type: 'Hardware', icon: '⚙️'),
-        FurnitureMaterial(
-            name: 'Screws', quantity: 20, type: 'Fastener', icon: '🔩'),
-      ],
-      steps: [
-        AssemblyStep(
-            stepNumber: 1,
-            title: 'Assemble cabinet frame',
-            description: 'Connect side and top/bottom panels',
-            icon: '🏗️'),
-        AssemblyStep(
-            stepNumber: 2,
-            title: 'Install shelves',
-            description: 'Place shelves at desired heights',
-            icon: '📚'),
-        AssemblyStep(
-            stepNumber: 3,
-            title: 'Attach doors',
-            description: 'Mount doors using hinges',
-            icon: '🚪'),
-      ],
-    ),
-
-    Furniture(
-      id: '8',
-      name: 'LISABO Dining Table',
-      category: 'tables',
-      description: 'Solid wood dining table with a natural finish',
-      imageUrl:
-          'https://www.ikea.com/ca/en/images/products/lisabo-lisabo-table-and-4-chairs-ash-veneer-ash__1255299_pe924491_s5.jpg',
-      model3DPath: 'assets/models/lisabo_table.glb',
-      difficultyLevel: 3,
-      estimatedTime: 40,
-      materials: [
-        FurnitureMaterial(
-            name: 'Tabletop', quantity: 1, type: 'Main', icon: '🪵'),
-        FurnitureMaterial(name: 'Legs', quantity: 4, type: 'Main', icon: '🦵'),
-        FurnitureMaterial(
-            name: 'Screws', quantity: 16, type: 'Fastener', icon: '🔩'),
-      ],
-      steps: [
-        AssemblyStep(
-            stepNumber: 1,
-            title: 'Flip tabletop',
-            description: 'Turn tabletop upside down',
-            icon: '🔄'),
-        AssemblyStep(
-            stepNumber: 2,
-            title: 'Attach legs',
-            description: 'Screw legs into pre-drilled holes',
-            icon: '🔧'),
-        AssemblyStep(
-            stepNumber: 3,
-            title: 'Tighten screws',
-            description: 'Ensure all screws are secure',
-            icon: '🪛'),
-      ],
-    ),
-
-    Furniture(
-      id: '9',
       name: 'HEMNES Dresser',
       category: 'wardrobes',
       description: 'Classic dresser with multiple drawers',
       imageUrl:
           'https://www.ikea.com/ca/en/images/products/hemnes-glass-door-cabinet-with-3-drawers-white-stain-light-brown__0805255_pe769478_s5.jpg',
-      model3DPath: 'assets/models/hemnes_dresser.glb',
+      model3DPath: 'assets/models/ikea_hemnes_dresser.glb',
       difficultyLevel: 4,
       estimatedTime: 60,
       materials: [
         FurnitureMaterial(
-            name: 'Dresser Panels', quantity: 6, type: 'Main', icon: '🪵'),
+          name: 'Dresser Panels',
+          quantity: 6,
+          type: 'Main',
+          icon: '🪵',
+        ),
         FurnitureMaterial(
-            name: 'Drawers', quantity: 4, type: 'Main', icon: '🗄️'),
+          name: 'Drawers',
+          quantity: 4,
+          type: 'Main',
+          icon: '🗄️',
+        ),
         FurnitureMaterial(
-            name: 'Screws', quantity: 30, type: 'Fastener', icon: '🔩'),
+          name: 'Screws',
+          quantity: 30,
+          type: 'Fastener',
+          icon: '🔩',
+        ),
       ],
       steps: [
         AssemblyStep(
-            stepNumber: 1,
-            title: 'Assemble frame',
-            description: 'Connect side, top and bottom panels',
-            icon: '🏗️'),
+          stepNumber: 1,
+          title: 'Assemble frame',
+          description: 'Connect side, top and bottom panels',
+          icon: '🏗️',
+          imageUrl:
+              'https://www.ikea.com/ca/en/assembly_instructions/hemnes-dresser__AA-123456-1_pub.pdf',
+        ),
         AssemblyStep(
-            stepNumber: 2,
-            title: 'Install drawers',
-            description: 'Slide drawers into place',
-            icon: '🗄️'),
+          stepNumber: 2,
+          title: 'Install drawers',
+          description: 'Slide drawers into place',
+          icon: '🗄️',
+          imageUrl:
+              'https://www.ikea.com/ca/en/assembly_instructions/hemnes-dresser__AA-123456-2_pub.pdf',
+        ),
         AssemblyStep(
-            stepNumber: 3,
-            title: 'Tighten screws',
-            description: 'Ensure all screws are secure',
-            icon: '🪛'),
+          stepNumber: 3,
+          title: 'Tighten screws',
+          description: 'Ensure all screws are secure',
+          icon: '🪛',
+          imageUrl:
+              'https://www.ikea.com/ca/en/assembly_instructions/hemnes-dresser__AA-123456-3_pub.pdf',
+        ),
       ],
     ),
 
+    // RASKOG TROLLEY
     Furniture(
-      id: '10',
-      name: 'FÄRLÖV Sofa',
-      category: 'chairs',
-      description: 'Comfortable sofa with removable covers',
+      id: '8',
+      name: 'RASKOG Trolley',
+      category: 'shelves',
+      description: 'Pink utility trolley for storage',
       imageUrl:
-          'https://www.ikea.com/ca/en/images/products/hyltarp-sofa-gransel-natural__1193814_pe901641_s5.jpg',
-      model3DPath: 'assets/models/farlov_sofa.glb',
-      difficultyLevel: 2,
-      estimatedTime: 30,
+          'https://www.ikea.com/ca/en/images/products/raskog-utility-cart-white__1366882_pe957173_s5.jpg',
+      model3DPath: 'assets/models/ikea_raskog_pink_utility_trolley.glb',
+      difficultyLevel: 1,
+      estimatedTime: 10,
       materials: [
         FurnitureMaterial(
-            name: 'Sofa Frame', quantity: 1, type: 'Main', icon: '🛋️'),
+          name: 'Trolley Frame',
+          quantity: 1,
+          type: 'Main',
+          icon: '🛒',
+        ),
         FurnitureMaterial(
-            name: 'Cushions', quantity: 4, type: 'Main', icon: '🛏️'),
+          name: 'Wheels',
+          quantity: 4,
+          type: 'Main',
+          icon: '🌀',
+        ),
         FurnitureMaterial(
-            name: 'Screws', quantity: 12, type: 'Fastener', icon: '🔩'),
+          name: 'Screws',
+          quantity: 8,
+          type: 'Fastener',
+          icon: '🔩',
+        ),
       ],
       steps: [
         AssemblyStep(
-            stepNumber: 1,
-            title: 'Unpack sofa frame',
-            description: 'Remove frame from packaging',
-            icon: '📦'),
+          stepNumber: 1,
+          title: 'Attach wheels',
+          description: 'Screw wheels to the base',
+          icon: '🔧',
+          imageUrl:
+              'https://www.ikea.com/ca/en/assembly_instructions/raskog-trolley__AA-123456-1_pub.pdf',
+        ),
         AssemblyStep(
-            stepNumber: 2,
-            title: 'Attach legs',
-            description: 'Screw legs into frame base',
-            icon: '🔧'),
-        AssemblyStep(
-            stepNumber: 3,
-            title: 'Add cushions',
-            description: 'Place cushions on the sofa frame',
-            icon: '🛏️'),
+          stepNumber: 2,
+          title: 'Flip trolley',
+          description: 'Turn trolley right-side up',
+          icon: '🔄',
+          imageUrl:
+              'https://www.ikea.com/ca/en/assembly_instructions/raskog-trolley__AA-123456-2_pub.pdf',
+        ),
       ],
-    )
+    ),
+
+    // FJÄLLBO TV UNIT
+    Furniture(
+      id: '9',
+      name: 'FJÄLLBO TV Unit',
+      category: 'tables',
+      description: 'Modern TV unit with open storage',
+      imageUrl:
+          'https://www.ikea.com/ca/en/images/products/fjaellbo-tv-bench-black__0473390_pe614545_s5.jpg',
+      model3DPath: 'assets/models/ikea_fjallbo_tv_unit.glb',
+      difficultyLevel: 2,
+      estimatedTime: 25,
+      materials: [
+        FurnitureMaterial(
+          name: 'TV Unit Panels',
+          quantity: 4,
+          type: 'Main',
+          icon: '🪵',
+        ),
+        FurnitureMaterial(
+          name: 'Screws',
+          quantity: 20,
+          type: 'Fastener',
+          icon: '🔩',
+        ),
+      ],
+      steps: [
+        AssemblyStep(
+          stepNumber: 1,
+          title: 'Assemble frame',
+          description: 'Connect panels with screws',
+          icon: '🏗️',
+          imageUrl:
+              'https://www.ikea.com/ca/en/assembly_instructions/fjallbo-tv-unit__AA-123456-1_pub.pdf',
+        ),
+        AssemblyStep(
+          stepNumber: 2,
+          title: 'Install shelves',
+          description: 'Place shelves in desired positions',
+          icon: '📚',
+          imageUrl:
+              'https://www.ikea.com/ca/en/assembly_instructions/fjallbo-tv-unit__AA-123456-2_pub.pdf',
+        ),
+      ],
+    ),
+
+    // NÖCKEBY CORNER SOFA
+    Furniture(
+      id: '10',
+      name: 'KLAGSHAMN Corner Sofa',
+      category: 'chairs',
+      description: 'Comfortable corner sofa for living rooms',
+      imageUrl:
+          'https://www.ikea.com/ca/en/images/products/friheten-klagshamn-corner-sofa-bed-with-storage-skiftebo-dark-gray__1057056_pe848725_s5.jpg',
+      model3DPath: 'assets/models/sofa_-_ikea_nockeby.glb',
+      difficultyLevel: 3,
+      estimatedTime: 40,
+      materials: [
+        FurnitureMaterial(
+          name: 'Sofa Frame',
+          quantity: 1,
+          type: 'Main',
+          icon: '🛋️',
+        ),
+        FurnitureMaterial(
+          name: 'Cushions',
+          quantity: 6,
+          type: 'Main',
+          icon: '🛏️',
+        ),
+        FurnitureMaterial(
+          name: 'Screws',
+          quantity: 16,
+          type: 'Fastener',
+          icon: '🔩',
+        ),
+      ],
+      steps: [
+        AssemblyStep(
+          stepNumber: 1,
+          title: 'Assemble frame',
+          description: 'Connect all frame parts',
+          icon: '🏗️',
+          imageUrl:
+              'https://www.ikea.com/ca/en/assembly_instructions/noeckeby-sofa__AA-123456-1_pub.pdf',
+        ),
+        AssemblyStep(
+          stepNumber: 2,
+          title: 'Attach legs',
+          description: 'Screw legs to the frame',
+          icon: '🔧',
+          imageUrl:
+              'https://www.ikea.com/ca/en/assembly_instructions/noeckeby-sofa__AA-123456-2_pub.pdf',
+        ),
+        AssemblyStep(
+          stepNumber: 3,
+          title: 'Add cushions',
+          description: 'Place cushions on the sofa',
+          icon: '🛏️',
+          imageUrl:
+              'https://www.ikea.com/ca/en/assembly_instructions/noeckeby-sofa__AA-123456-3_pub.pdf',
+        ),
+      ],
+    ),
+
+    // BISSA SHOE STORAGE
+    Furniture(
+      id: '11',
+      name: 'BISSA Shoe Storage',
+      category: 'shelves',
+      description: 'Shoe storage with multiple compartments',
+      imageUrl:
+          'https://www.ikea.com/ca/en/images/products/bissa-shoe-cabinet-with-2-compartments-white__1126569_pe875786_s5.jpg',
+      model3DPath: 'assets/models/ikea_bissa_shoe_storage_rigged.glb',
+      difficultyLevel: 2,
+      estimatedTime: 20,
+      materials: [
+        FurnitureMaterial(
+          name: 'Shoe Storage Panels',
+          quantity: 4,
+          type: 'Main',
+          icon: '🪵',
+        ),
+        FurnitureMaterial(
+          name: 'Shelves',
+          quantity: 6,
+          type: 'Main',
+          icon: '👟',
+        ),
+        FurnitureMaterial(
+          name: 'Screws',
+          quantity: 24,
+          type: 'Fastener',
+          icon: '🔩',
+        ),
+      ],
+      steps: [
+        AssemblyStep(
+          stepNumber: 1,
+          title: 'Assemble frame',
+          description: 'Connect panels with screws',
+          icon: '🏗️',
+          imageUrl:
+              'https://www.ikea.com/ca/en/assembly_instructions/bissa-shoe-storage__AA-123456-1_pub.pdf',
+        ),
+        AssemblyStep(
+          stepNumber: 2,
+          title: 'Install shelves',
+          description: 'Place shelves in the frame',
+          icon: '👟',
+          imageUrl:
+              'https://www.ikea.com/ca/en/assembly_instructions/bissa-shoe-storage__AA-123456-2_pub.pdf',
+        ),
+      ],
+    ),
+
+    // CORNER SOFA
+    Furniture(
+      id: '12',
+      name: 'Corner Sofa',
+      category: 'chairs',
+      description: 'Spacious corner sofa for large living areas',
+      imageUrl:
+          'https://www.ikea.com/ca/en/images/products/ekholma-corner-sofa-4-seat-with-open-end-hakebo-dark-gray__1360589_pe954490_s5.jpg',
+      model3DPath: 'assets/models/corner_sofa.glb',
+      difficultyLevel: 3,
+      estimatedTime: 45,
+      materials: [
+        FurnitureMaterial(
+          name: 'Sofa Frame',
+          quantity: 1,
+          type: 'Main',
+          icon: '🛋️',
+        ),
+        FurnitureMaterial(
+          name: 'Cushions',
+          quantity: 8,
+          type: 'Main',
+          icon: '🛏️',
+        ),
+        FurnitureMaterial(
+          name: 'Screws',
+          quantity: 20,
+          type: 'Fastener',
+          icon: '🔩',
+        ),
+      ],
+      steps: [
+        AssemblyStep(
+          stepNumber: 1,
+          title: 'Assemble frame',
+          description: 'Connect all frame parts',
+          icon: '🏗️',
+          imageUrl:
+              'https://www.ikea.com/ca/en/assembly_instructions/corner-sofa__AA-123456-1_pub.pdf',
+        ),
+        AssemblyStep(
+          stepNumber: 2,
+          title: 'Attach legs',
+          description: 'Screw legs to the frame',
+          icon: '🔧',
+          imageUrl:
+              'https://www.ikea.com/ca/en/assembly_instructions/corner-sofa__AA-123456-2_pub.pdf',
+        ),
+        AssemblyStep(
+          stepNumber: 3,
+          title: 'Add cushions',
+          description: 'Place cushions on the sofa',
+          icon: '🛏️',
+          imageUrl:
+              'https://www.ikea.com/ca/en/assembly_instructions/corner-sofa__AA-123456-3_pub.pdf',
+        ),
+      ],
+    ),
   ];
 }
 
@@ -622,12 +952,10 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
 
   List<Furniture> get filteredFurniture {
     var furniture = DemoData.furnitureList;
-
     if (selectedCategory != 'all') {
       furniture =
           furniture.where((f) => f.category == selectedCategory).toList();
     }
-
     if (searchQuery.isNotEmpty) {
       furniture = furniture
           .where((f) =>
@@ -635,7 +963,6 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
               f.description.toLowerCase().contains(searchQuery.toLowerCase()))
           .toList();
     }
-
     return furniture;
   }
 
@@ -790,7 +1117,6 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
           itemBuilder: (context, index) {
             final category = DemoData.categories[index];
             final isSelected = selectedCategory == category.id;
-
             return GestureDetector(
               onTap: () {
                 setState(() {
@@ -854,7 +1180,6 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
 
   Widget _buildFurnitureGrid() {
     final furniture = filteredFurniture;
-
     if (furniture.isEmpty) {
       return SliverFillRemaining(
         child: Center(
@@ -880,7 +1205,6 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
         ),
       );
     }
-
     return SliverPadding(
       padding: const EdgeInsets.all(20),
       sliver: SliverGrid(
@@ -947,12 +1271,10 @@ class _FurnitureCardState extends State<FurnitureCard> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // IMAGE/3D VIEWER TOGGLE
             Expanded(
               flex: 3,
               child: Stack(
                 children: [
-                  // CONTENT (2D or 3D)
                   ClipRRect(
                     borderRadius: const BorderRadius.vertical(
                       top: Radius.circular(24),
@@ -1008,8 +1330,6 @@ class _FurnitureCardState extends State<FurnitureCard> {
                             },
                           ),
                   ),
-
-                  // 2D/3D TOGGLE BUTTON
                   Positioned(
                     top: 8,
                     left: 8,
@@ -1061,8 +1381,6 @@ class _FurnitureCardState extends State<FurnitureCard> {
                       ),
                     ),
                   ),
-
-                  // DIFFICULTY BADGE
                   Positioned(
                     top: 8,
                     right: 8,
@@ -1108,8 +1426,6 @@ class _FurnitureCardState extends State<FurnitureCard> {
                 ],
               ),
             ),
-
-            // INFO SECTION
             Expanded(
               flex: 2,
               child: Padding(
@@ -1223,7 +1539,6 @@ class _FurnitureDetailScreenState extends State<FurnitureDetailScreen>
       backgroundColor: const Color(0xFFF5F5F5),
       body: CustomScrollView(
         slivers: [
-          // HEADER WITH IMAGE/3D
           SliverAppBar(
             expandedHeight: 400,
             pinned: true,
@@ -1307,8 +1622,6 @@ class _FurnitureDetailScreenState extends State<FurnitureDetailScreen>
                             );
                           },
                         ),
-
-                  // TOGGLE BUTTON
                   Positioned(
                     bottom: 20,
                     right: 20,
@@ -1377,8 +1690,6 @@ class _FurnitureDetailScreenState extends State<FurnitureDetailScreen>
               ),
             ),
           ),
-
-          // INFO SECTION
           SliverToBoxAdapter(
             child: Column(
               children: [
@@ -1436,8 +1747,6 @@ class _FurnitureDetailScreenState extends State<FurnitureDetailScreen>
                     ],
                   ),
                 ),
-
-                // TABS
                 Container(
                   margin: const EdgeInsets.symmetric(horizontal: 20),
                   decoration: BoxDecoration(
@@ -1653,6 +1962,27 @@ class _FurnitureDetailScreenState extends State<FurnitureDetailScreen>
                           height: 1.5,
                         ),
                       ),
+                      if (step.imageUrl != null)
+                        GestureDetector(
+                          onTap: () {
+                            // TODO: Open PDF or image guide
+                          },
+                          child: Container(
+                            margin: const EdgeInsets.only(top: 8),
+                            padding: const EdgeInsets.all(8),
+                            decoration: BoxDecoration(
+                              color: Colors.blue.withOpacity(0.1),
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                            child: const Text(
+                              'View Guide',
+                              style: TextStyle(
+                                color: Colors.blue,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                        ),
                     ],
                   ),
                 ),
