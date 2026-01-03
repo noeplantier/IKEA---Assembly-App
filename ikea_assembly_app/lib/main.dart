@@ -198,7 +198,7 @@ class DemoData {
       category: 'beds',
       description: 'Queen size bed frame with adjustable bed sides',
       imageUrl:
-          'https://www.ikea.com/us/en/images/products/malm-bed-frame-high-white__0637519_pe698416_s5.jpg',
+          'https://www.ikea.com/ca/en/images/products/malm-bed-frame-high-white-luroey__0749130_pe745499_s5.jpg',
       model3DPath: 'assets/models/malm_bed.glb',
       difficultyLevel: 3,
       estimatedTime: 45,
@@ -325,7 +325,7 @@ class DemoData {
       category: 'chairs',
       description: 'Comfortable armchair with bentwood frame',
       imageUrl:
-          'https://www.ikea.com/us/en/images/products/poaeng-armchair-birch-veneer-knisa-light-beige__0818564_pe774480_s5.jpg',
+          'https://www.ikea.com/ca/en/images/products/poaeng-armchair-brown-gunnared-beige__1192128_pe900849_s5.jpg',
       model3DPath: 'assets/models/poang_armchair.glb',
       difficultyLevel: 1,
       estimatedTime: 15,
@@ -363,7 +363,7 @@ class DemoData {
       category: 'wardrobes',
       description: 'Customizable wardrobe system with doors',
       imageUrl:
-          'https://www.ikea.com/us/en/images/products/pax-wardrobe-white__0739491_pe742018_s5.jpg',
+          'https://www.ikea.com/ca/en/images/products/pax-wardrobe-combination-white__1381984_pe962091_s5.jpg',
       model3DPath: 'assets/models/pax_wardrobe.glb',
       difficultyLevel: 5,
       estimatedTime: 120,
@@ -407,7 +407,7 @@ class DemoData {
       category: 'tables',
       description: 'Simple and modern coffee table',
       imageUrl:
-          'https://www.ikea.com/us/en/images/products/lack-coffee-table-white__0086031_pe216376_s5.jpg',
+          'https://www.ikea.com/ca/en/images/products/lack-coffee-table-white__0750651_pe746801_s5.jpg',
       model3DPath: 'assets/models/lack_table.glb',
       difficultyLevel: 1,
       estimatedTime: 20,
@@ -436,6 +436,154 @@ class DemoData {
             icon: '🪛'),
       ],
     ),
+
+    Furniture(
+      id: '7',
+      name: 'EKET Cabinet',
+      category: 'shelves',
+      description: 'Modular cabinet with doors and shelves',
+      imageUrl:
+          'https://www.ikea.com/ca/en/images/products/eket-storage-combination-with-legs-white-wood__0915074_pe784547_s5.jpg',
+      model3DPath: 'assets/models/eket_cabinet.glb',
+      difficultyLevel: 2,
+      estimatedTime: 35,
+      materials: [
+        FurnitureMaterial(
+            name: 'Cabinet Panels', quantity: 4, type: 'Main', icon: '🪵'),
+        FurnitureMaterial(name: 'Doors', quantity: 2, type: 'Main', icon: '🚪'),
+        FurnitureMaterial(
+            name: 'Hinges', quantity: 4, type: 'Hardware', icon: '⚙️'),
+        FurnitureMaterial(
+            name: 'Screws', quantity: 20, type: 'Fastener', icon: '🔩'),
+      ],
+      steps: [
+        AssemblyStep(
+            stepNumber: 1,
+            title: 'Assemble cabinet frame',
+            description: 'Connect side and top/bottom panels',
+            icon: '🏗️'),
+        AssemblyStep(
+            stepNumber: 2,
+            title: 'Install shelves',
+            description: 'Place shelves at desired heights',
+            icon: '📚'),
+        AssemblyStep(
+            stepNumber: 3,
+            title: 'Attach doors',
+            description: 'Mount doors using hinges',
+            icon: '🚪'),
+      ],
+    ),
+
+    Furniture(
+      id: '8',
+      name: 'LISABO Dining Table',
+      category: 'tables',
+      description: 'Solid wood dining table with a natural finish',
+      imageUrl:
+          'https://www.ikea.com/ca/en/images/products/lisabo-lisabo-table-and-4-chairs-ash-veneer-ash__1255299_pe924491_s5.jpg',
+      model3DPath: 'assets/models/lisabo_table.glb',
+      difficultyLevel: 3,
+      estimatedTime: 40,
+      materials: [
+        FurnitureMaterial(
+            name: 'Tabletop', quantity: 1, type: 'Main', icon: '🪵'),
+        FurnitureMaterial(name: 'Legs', quantity: 4, type: 'Main', icon: '🦵'),
+        FurnitureMaterial(
+            name: 'Screws', quantity: 16, type: 'Fastener', icon: '🔩'),
+      ],
+      steps: [
+        AssemblyStep(
+            stepNumber: 1,
+            title: 'Flip tabletop',
+            description: 'Turn tabletop upside down',
+            icon: '🔄'),
+        AssemblyStep(
+            stepNumber: 2,
+            title: 'Attach legs',
+            description: 'Screw legs into pre-drilled holes',
+            icon: '🔧'),
+        AssemblyStep(
+            stepNumber: 3,
+            title: 'Tighten screws',
+            description: 'Ensure all screws are secure',
+            icon: '🪛'),
+      ],
+    ),
+
+    Furniture(
+      id: '9',
+      name: 'HEMNES Dresser',
+      category: 'wardrobes',
+      description: 'Classic dresser with multiple drawers',
+      imageUrl:
+          'https://www.ikea.com/ca/en/images/products/hemnes-glass-door-cabinet-with-3-drawers-white-stain-light-brown__0805255_pe769478_s5.jpg',
+      model3DPath: 'assets/models/hemnes_dresser.glb',
+      difficultyLevel: 4,
+      estimatedTime: 60,
+      materials: [
+        FurnitureMaterial(
+            name: 'Dresser Panels', quantity: 6, type: 'Main', icon: '🪵'),
+        FurnitureMaterial(
+            name: 'Drawers', quantity: 4, type: 'Main', icon: '🗄️'),
+        FurnitureMaterial(
+            name: 'Screws', quantity: 30, type: 'Fastener', icon: '🔩'),
+      ],
+      steps: [
+        AssemblyStep(
+            stepNumber: 1,
+            title: 'Assemble frame',
+            description: 'Connect side, top and bottom panels',
+            icon: '🏗️'),
+        AssemblyStep(
+            stepNumber: 2,
+            title: 'Install drawers',
+            description: 'Slide drawers into place',
+            icon: '🗄️'),
+        AssemblyStep(
+            stepNumber: 3,
+            title: 'Tighten screws',
+            description: 'Ensure all screws are secure',
+            icon: '🪛'),
+      ],
+    ),
+
+    Furniture(
+      id: '10',
+      name: 'FÄRLÖV Sofa',
+      category: 'chairs',
+      description: 'Comfortable sofa with removable covers',
+      imageUrl:
+          'https://www.ikea.com/ca/en/images/products/hyltarp-sofa-gransel-natural__1193814_pe901641_s5.jpg',
+      model3DPath: 'assets/models/farlov_sofa.glb',
+      difficultyLevel: 2,
+      estimatedTime: 30,
+      materials: [
+        FurnitureMaterial(
+            name: 'Sofa Frame', quantity: 1, type: 'Main', icon: '🛋️'),
+        FurnitureMaterial(
+            name: 'Cushions', quantity: 4, type: 'Main', icon: '🛏️'),
+        FurnitureMaterial(
+            name: 'Screws', quantity: 12, type: 'Fastener', icon: '🔩'),
+      ],
+      steps: [
+        AssemblyStep(
+            stepNumber: 1,
+            title: 'Unpack sofa frame',
+            description: 'Remove frame from packaging',
+            icon: '📦'),
+        AssemblyStep(
+            stepNumber: 2,
+            title: 'Attach legs',
+            description: 'Screw legs into frame base',
+            icon: '🔧'),
+        AssemblyStep(
+            stepNumber: 3,
+            title: 'Add cushions',
+            description: 'Place cushions on the sofa frame',
+            icon: '🛏️'),
+      ],
+    )
   ];
 }
 
