@@ -746,7 +746,7 @@ class DemoData {
       ],
     ),
 
-    // NÖCKEBY CORNER SOFA
+    // KLAGSHAMN CORNER SOFA
     Furniture(
       id: '10',
       name: 'KLAGSHAMN Corner Sofa',
@@ -784,7 +784,7 @@ class DemoData {
           description: 'Connect all frame parts',
           icon: '🏗️',
           imageUrl:
-              'https://www.ikea.com/ca/en/assembly_instructions/noeckeby-sofa__AA-123456-1_pub.pdf',
+              'https://www.ikea.com/ca/en/assembly_instructions/klagshamn-sofa__AA-123456-1_pub.pdf',
         ),
         AssemblyStep(
           stepNumber: 2,
@@ -792,7 +792,7 @@ class DemoData {
           description: 'Screw legs to the frame',
           icon: '🔧',
           imageUrl:
-              'https://www.ikea.com/ca/en/assembly_instructions/noeckeby-sofa__AA-123456-2_pub.pdf',
+              'https://www.ikea.com/ca/en/assembly_instructions/klagshamn-sofa__AA-123456-2_pub.pdf',
         ),
         AssemblyStep(
           stepNumber: 3,
@@ -800,7 +800,7 @@ class DemoData {
           description: 'Place cushions on the sofa',
           icon: '🛏️',
           imageUrl:
-              'https://www.ikea.com/ca/en/assembly_instructions/noeckeby-sofa__AA-123456-3_pub.pdf',
+              'https://www.ikea.com/ca/en/assembly_instructions/klagshamn-sofa__AA-123456-3_pub.pdf',
         ),
       ],
     ),
@@ -856,10 +856,10 @@ class DemoData {
       ],
     ),
 
-    // CORNER SOFA
+    // EKHOLMA CORNER SOFA
     Furniture(
       id: '12',
-      name: 'Corner Sofa',
+      name: 'EKHOLMA Corner Sofa',
       category: 'chairs',
       description: 'Spacious corner sofa for large living areas',
       imageUrl:
@@ -894,7 +894,7 @@ class DemoData {
           description: 'Connect all frame parts',
           icon: '🏗️',
           imageUrl:
-              'https://www.ikea.com/ca/en/assembly_instructions/corner-sofa__AA-123456-1_pub.pdf',
+              'https://www.ikea.com/ca/en/assembly_instructions/ekholma-sofa__AA-123456-1_pub.pdf',
         ),
         AssemblyStep(
           stepNumber: 2,
@@ -902,7 +902,7 @@ class DemoData {
           description: 'Screw legs to the frame',
           icon: '🔧',
           imageUrl:
-              'https://www.ikea.com/ca/en/assembly_instructions/corner-sofa__AA-123456-2_pub.pdf',
+              'https://www.ikea.com/ca/en/assembly_instructions/ekholma-sofa__AA-123456-2_pub.pdf',
         ),
         AssemblyStep(
           stepNumber: 3,
@@ -910,7 +910,7 @@ class DemoData {
           description: 'Place cushions on the sofa',
           icon: '🛏️',
           imageUrl:
-              'https://www.ikea.com/ca/en/assembly_instructions/corner-sofa__AA-123456-3_pub.pdf',
+              'https://www.ikea.com/ca/en/assembly_instructions/ekholma-sofa__AA-123456-3_pub.pdf',
         ),
       ],
     ),
@@ -1280,20 +1280,7 @@ class _FurnitureCardState extends State<FurnitureCard> {
                       top: Radius.circular(24),
                     ),
                     child: show3D
-                        ? ModelViewer(
-                            src: widget.furniture.model3DPath,
-                            alt: widget.furniture.name,
-                            autoRotate: true,
-                            rotationPerSecond: '30deg',
-                            cameraControls: false,
-                            disableZoom: true,
-                            backgroundColor: const Color(0xFFF5F5F5),
-                            shadowIntensity: 0.7,
-                            exposure: 1.0,
-                            loading: Loading.eager,
-                            cameraOrbit: '0deg 75deg 105%',
-                            fieldOfView: '30deg',
-                          )
+                        ? _build3DViewer()
                         : Image.network(
                             widget.furniture.imageUrl,
                             fit: BoxFit.cover,
@@ -1498,6 +1485,23 @@ class _FurnitureCardState extends State<FurnitureCard> {
       ),
     );
   }
+
+  Widget _build3DViewer() {
+    return ModelViewer(
+      src: widget.furniture.model3DPath,
+      alt: widget.furniture.name,
+      autoRotate: true,
+      rotationPerSecond: '30deg',
+      cameraControls: true,
+      disableZoom: false,
+      backgroundColor: const Color(0xFFF5F5F5),
+      shadowIntensity: 0.7,
+      exposure: 1.0,
+      loading: Loading.eager,
+      cameraOrbit: '0deg 75deg 105%',
+      fieldOfView: '30deg',
+    );
+  }
 }
 
 // DETAIL SCREEN
@@ -1587,25 +1591,7 @@ class _FurnitureDetailScreenState extends State<FurnitureDetailScreen>
                 fit: StackFit.expand,
                 children: [
                   show3D
-                      ? ModelViewer(
-                          src: widget.furniture.model3DPath,
-                          alt: widget.furniture.name,
-                          autoRotate: true,
-                          rotationPerSecond: '20deg',
-                          cameraControls: true,
-                          backgroundColor: const Color(0xFFF5F5F5),
-                          shadowIntensity: 1.0,
-                          exposure: 1.0,
-                          loading: Loading.eager,
-                          ar: true,
-                          arModes: const [
-                            'scene-viewer',
-                            'webxr',
-                            'quick-look'
-                          ],
-                          cameraOrbit: 'auto auto 105%',
-                          fieldOfView: '30deg',
-                        )
+                      ? _build3DViewer()
                       : Image.network(
                           widget.furniture.imageUrl,
                           fit: BoxFit.cover,
@@ -2068,6 +2054,25 @@ class _FurnitureDetailScreenState extends State<FurnitureDetailScreen>
           ),
         );
       },
+    );
+  }
+
+  Widget _build3DViewer() {
+    return ModelViewer(
+      src: widget.furniture.model3DPath,
+      alt: widget.furniture.name,
+      autoRotate: true,
+      rotationPerSecond: '20deg',
+      cameraControls: true,
+      disableZoom: false,
+      backgroundColor: const Color(0xFFF5F5F5),
+      shadowIntensity: 1.0,
+      exposure: 1.0,
+      loading: Loading.eager,
+      ar: true,
+      arModes: const ['scene-viewer', 'webxr', 'quick-look'],
+      cameraOrbit: 'auto auto 105%',
+      fieldOfView: '30deg',
     );
   }
 }
